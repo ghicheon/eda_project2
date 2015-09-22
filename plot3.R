@@ -14,10 +14,11 @@ SCC <- readRDS("Source_Classification_Code.rds")
 out <- ddply( NEI[ NEI$fips == "24510",], c("year", "type"),summarize, 
               emission=sum(Emissions))
 
-means.barplot <- qplot(x=year, y=emission, fill=type,
+gout       <- qplot(x=year, y=emission, fill=type,
                    data=out, geom="bar", stat="identity", position="dodge",
    	           main="emisson of Baltimore City 1999~2008 per types")
 
+print(gout)
 
 dev.copy(png,'plot3.png')
 dev.off()
