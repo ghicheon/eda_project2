@@ -18,7 +18,7 @@ what <- as.character(temp)
 NEI2 <- NEI[ NEI$SCC %in% what ,]
 
 
-#I found out  fips of baltimore city  end with "510".
+#fips of baltimore city  is "24510".
 out <- ddply( NEI2[ NEI2$fips =="24510" ,] , 
               c("year" ),summarize, emission=sum(Emissions))
 
